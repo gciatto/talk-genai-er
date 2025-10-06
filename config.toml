@@ -1,4 +1,4 @@
-baseURL = "https://gciatto.github.io/talk-genai-unibo/"
+baseURL = "https://gciatto.github.io/talk-genai-er/"
 languageCode = "it-it"
 title = "IA Generativa: Tecnologie ed Esempi di Utilizzo"
 disableKinds = ["sitemap", "RSS"]
