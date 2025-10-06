@@ -25,7 +25,7 @@ outputs = ["Reveal"]
 
 <{{< slides-url >}}>
 
-![](./qr.png)
+{{< qrcode >}}
 
 [<i class="fa fa-print" aria-hidden="true"></i> versione stampabile](?print-pdf&pdfSeparateFragments=false)
 
@@ -201,8 +201,8 @@ Algoritmi di _IA_ in grado di __generare automaticamente__ _contenuti_, e.g.:
 - _Auto-completamento_: e.g. [GitHub Copilot](https://github.com/features/copilot)
 - _Programmatiche_: e.g. [OpenAI Platform](https://openai.com/api/), [Hugging Face](https://huggingface.co/)
 - _In-App_: e.g. [Microsoft 365 Copilot](https://www.microsoft.com/it-it/microsoft-365/copilot?market=it)
-- _Editing di audio-visivi_: e.g. [Suno](https://suno.com/), [Runway](https://runwayml.com/)
-<!-- - _Ispezione di materiale generato_: e.g. [GPTZero](https://gptzero.me/), [ZeroGPT](https://www.zerogpt.com/) -->
+- _Pre-confezionate_: e.g. [Suno](https://suno.com/), [Runway](https://runwayml.com/)
+- _Ispezione di materiale generato_: e.g. [GPTZero](https://gptzero.me/), [ZeroGPT](https://www.zerogpt.com/)
 
 {{% color "red" %}}Lista non esaustiva!{{% /color %}}
 
@@ -480,32 +480,32 @@ Possiamo considerare FM come __esperti__ su tematiche che:
 
 {{% section %}}
 
-## Esempio: esplorazione sull'argomento ["Sistemi multi-agente"](https://en.wikipedia.org/wiki/Multi-agent_system), con _ChatGPT_
+## Esempio: esplorazione sull'argomento ["Qualità dell'aria in ER"](https://www.arpae.it/it/temi-ambientali/aria/dati-qualita-aria), con _ChatGPT_
 
-<span class="hint">(un argomento complesso qualsiasi, scelgo un mio tema di ricerca così ho un metro di giudizio)</span>
+> Vogliamo ottenere informazioni sul tema della __qualità dell'aria__ in regione
 
-<br>
+- la regione ER ha un sistema di monitoraggio della qualità dell'aria
+    + gestito da [ARPAE](https://www.arpae.it/it)
+    + dati accessibili pubblicamente tramite [Open Data](https://dati.arpae.it/)
 
-> Un sistema multi-agente (MAS) è un tipo di sistema composto da __molteplici agenti indipendenti__ (ma _interattivi_), ciascuno capace di _percepire_ il proprio ambiente e di intraprendere _azioni_.
-> Gli agenti possono essere _modelli di IA_, programmi _software_, _robot_ e altre _entità computazionali_.
-> _Molteplici agenti_ possono _cooperare_ o verso un _obiettivo comune_ che va oltre le capacità dei singoli agenti, con una maggiore adattabilità e robustezza.
+- larga parte del territorio è in pianura padana e quindi soggetta a problemi di _inquinamento atmosferico_
 
-(cf. <https://www.gartner.com/en/information-technology/glossary/multiagent-systems>)
+- assumiamo che _informazioni aggiornate_ siano disponibili _sul Web_
 
-<!-- <br>
-
-### Link alla conversazione completa
-
-<https://chatgpt.com/share/e/679a41e7-e164-8004-8f01-d135dde3892c> -->
+- faremo l'esplorazione 2 volte:
+    1. senza login, usando [chat.openai.com](https://chat.openai.com/), così che ChatGPT __non__ possa fare ricerche sul Web
+    2. con login, così che ChatGPT __possa__ fare ricerche sul Web
 
 ---
 
 {{% multicol %}}
 {{% col %}}
-{{< image src="./search-engine/chatgpt/mas-1.png" width="100%" max-h="70vh" >}}
+{{< image src="./search-engine/chatgpt/air-quality-er-1.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-- Definizione sostanzialmente __corretta__
+- Prompt: `dammi informazioni sulla qualità dell'aria in emilia-romagna, cita le fonti`
+- __No login__
+- Risposta con informazioni di massima molto generali
 {{% /col %}}
 {{% /multicol %}}
 
@@ -513,10 +513,15 @@ Possiamo considerare FM come __esperti__ su tematiche che:
 
 {{% multicol %}}
 {{% col %}}
-{{< image src="./search-engine/chatgpt/mas-2.png" width="100%" max-h="70vh" >}}
+{{< image src="./search-engine/chatgpt/air-quality-er-2.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-- Caratteristiche sostanzialmente __corrette__
+- Prompt: `dammi informazioni sulla qualità dell'aria in emilia-romagna, cita le fonti`
+- __No login__
+- Risposta con informazioni di massima molto generali
+- Vengono generati _riferimenti_ (_URL_) a siti Web
+    + esistono davvero?
+    + il contenuto della risposta è coerente rispetto al sito citato?
 {{% /col %}}
 {{% /multicol %}}
 
@@ -524,12 +529,15 @@ Possiamo considerare FM come __esperti__ su tematiche che:
 
 {{% multicol %}}
 {{% col %}}
-{{< image src="./search-engine/chatgpt/mas-3.png" width="100%" max-h="70vh" >}}
+{{< image src="./search-engine/chatgpt/air-quality-er-3.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-- Le applicazioni _menzionate_ sono __corrette__
-- _Nessuna_ garanzia di __esaustività__
-    + __bias__ di campionamento?
+- Prompt: `dammi informazioni sulla qualità dell'aria in emilia-romagna, cita le fonti`
+- __No login__
+- Risposta con informazioni di massima molto generali
+- Vengono generati _riferimenti_ (_URL_) a siti Web
+    + esistono davvero?
+    + il contenuto della risposta è coerente rispetto al sito citato?
 {{% /col %}}
 {{% /multicol %}}
 
@@ -537,13 +545,12 @@ Possiamo considerare FM come __esperti__ su tematiche che:
 
 {{% multicol %}}
 {{% col %}}
-{{< image src="./search-engine/chatgpt/mas-4.png" width="100%" max-h="70vh" >}}
+{{< image src="./search-engine/chatgpt/air-quality-er-4.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-- _Nessuna_ garanzia di __esaustività__
-- Nessun riferimento per [AlphaStar](https://deepmind.google/discover/blog/alphastar-mastering-the-real-time-strategy-game-starcraft-ii/)
-- Interserzione con _altre nicchie_
-    + __blockchain__, __protocolli di consenso__
+- Rifacciamo la stessa domanda, previo __login__
+- Informazioni più _specifiche_ ed __aggiornate__
+- Notare la sezione __"Citazioni"__ sulla destra
 {{% /col %}}
 {{% /multicol %}}
 
@@ -551,136 +558,17 @@ Possiamo considerare FM come __esperti__ su tematiche che:
 
 {{% multicol %}}
 {{% col %}}
-{{< image src="./search-engine/chatgpt/mas-5.png" width="100%" max-h="70vh" >}}
+{{< image src="./search-engine/chatgpt/air-quality-er-5.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-- Gli aspetti _menzionati_ hanno __fondamenta solide__
-- Lista __incompleta__
+- Rifacciamo la stessa domanda, previo __login__
+- Informazioni più _specifiche_ ed __aggiornate__
+- Notare la sezione __"Citazioni"__ sulla destra
+    + attivabile dal pulsante _"Fonti"_ in fondo alla risposta
 {{% /col %}}
 {{% /multicol %}}
-
----
-
-{{% multicol %}}
-{{% col %}}
-{{< image src="./search-engine/chatgpt/mas-6.png" width="100%" max-h="70vh" >}}
-{{% /col %}}
-{{% col %}}
-- Tutte menzioni __corrette__
-- _Nessuna_ garanzia di __esaustività__
-    + __bias__ di campionamento?
-{{% /col %}}
-{{% /multicol %}}
-
----
-
-{{% multicol %}}
-{{% col %}}
-{{< image src="./search-engine/chatgpt/mas-7.png" width="100%" max-h="70vh" link="https://arxiv.org/abs/1706.02275" >}}
-{{% /col %}}
-{{% col %}}
-- [Link ad Arxiv](https://arxiv.org/abs/1706.02275) __corretto__
-- Riferimento _adeguato_ al contesto corrente
-- Riferimeto __mancante__ a [paper definitivo](https://dl.acm.org/doi/10.5555/3295222.3295385)
-{{% /col %}}
-{{% /multicol %}}
-
----
-
-{{% multicol %}}
-{{% col %}}
-{{< image src="./search-engine/chatgpt/mas-8.png" width="100%" max-h="70vh" link="https://arxiv.org/abs/1903.08082" >}}
-{{% /col %}}
-{{% col %}}
-- Riferimento _adeguato_ al contesto corrente
-- [Link ad Arxiv](https://arxiv.org/abs/1903.08082) __incoerente__ col riferimento
-- Il paper menzionato ha un __altro URL__:
-    + <https://arxiv.org/abs/2011.05373>
-- Riferimeto __mancante__ a [paper definitivo](https://dl.acm.org/doi/10.5555/3495724.3497048)
-{{% /col %}}
-{{% /multicol %}}
-
----
-
-{{% multicol %}}
-{{% col %}}
-{{< image src="./search-engine/chatgpt/mas-9.png" width="100%" max-h="70vh" link="https://arxiv.org/abs/1906.01220" >}}
-{{% /col %}}
-{{% col %}}
-- Riferimento _**in**adeguato_ al contesto corrente
-- [Link ad Arxiv](https://arxiv.org/abs/1906.01220) __incoerente__ col riferimento
-- Il paper menzionato ha un __altro URL__:
-    + <https://arxiv.org/abs/1809.03531>
-- Riferimeto __mancante__ a [paper definitivo](https://doi.org/10.1109/LRA.2019.2903261)
-{{% /col %}}
-{{% /multicol %}}
-
----
-
-{{% multicol %}}
-{{% col %}}
-{{< image src="./search-engine/chatgpt/mas-10.png" width="100%" max-h="70vh" link="https://arxiv.org/abs/1910.05789" >}}
-{{% /col %}}
-{{% col %}}
-- [Link ad Arxiv](https://arxiv.org/abs/1910.05789) __corretto__
-- Riferimento _adeguato_ al contesto corrente
-- Riferimeto __mancante__ a [paper definitivo](https://dl.acm.org/doi/10.5555/3454287.3454752)
-{{% /col %}}
-{{% /multicol %}}
-
----
-
-{{% multicol %}}
-{{% col %}}
-{{< image src="./search-engine/chatgpt/mas-11.png" width="100%" max-h="70vh" link="https://arxiv.org/abs/1803.08884" >}}
-{{% /col %}}
-{{% col %}}
-- [Link ad Arxiv](https://arxiv.org/abs/1803.08884) __corretto__
-- Riferimento _adeguato_ al contesto corrente
-- Riferimeto __mancante__ a [paper definitivo](https://dl.acm.org/doi/10.5555/3327144.3327252)
-{{% /col %}}
-{{% /multicol %}}
-
 
 {{% /section %}}
-
----
-
-## GenAI come _motore di ricerca_ (pt. 2)
-
-> Uno strumento forse _migliore_ (ma più _costoso_) in ambito accademico,
-> <br> potrebbe essere [Scite](https://scite.ai)
-
-- ![](./logo-scite.svg) è un __database bibliografico__ che indicizza le citazioni nel contesto (cf. __"Smart Citation Index"__)
-    * citazioni classificate come _supportive_, _mentioning_, o _contrasting_
-    * fonte: ["Evaluating the Accuracy of scite, a Smart Citation Index"](https://doi.org/10.18060/26528)
-
-- Fornisce un LLM, [Scite Assistant](https://scite.ai/assistant) ha accesso al database bibliografico
-    * interfaccia __conversazionale__
-    * _riferimenti bibliografici_ eventualmente presenti nelle risposte vengono arricchiti con __metadati__
-        + es. link all'articolo, evidenziazione del testo citato, etc.
-
----
-
-## Interfaccia di [Scite Assistant](https://scite.ai/assistant)
-
-![](./homepage-scite.png)
-
----
-
-## Esempio: esplorazione sull'argomento ["Sistemi multi-agente"](https://en.wikipedia.org/wiki/Multi-agent_system), con _Scite_
-
-{{< image src="./search-engine/scite/mas-1.svg" width="100%" max-h="60vh" >}}
-
-- Riferimenti bibliografici con _ipertesti_, e _metadati_
-- Nella parte _destra_, sono riportati i _dettagli_ dei riferimenti bibliografici
-
----
-
-{{< image src="./search-engine/scite/mas-2.png" width="100%" max-h="70vh" >}}
-
-- {{% color "red" %}}Non{{% /color %}} fa davvero riferimento alle {{% color "red" %}}parole chiave menzionate in precedenza{{% /color %}}
-- {{% color "red" %}}Bias di campionamento{{% /color %}}
 
 ---
 
@@ -721,21 +609,15 @@ Possiamo considerare FM come __esperti__ su tematiche che:
 
 ---
 
-## Esempio: scrittura _abstract_ di una _SRL_ inerente ["IA Neuro-Simbolica"](https://en.wikipedia.org/wiki/Neuro-symbolic_AI), con _ChatGPT_
+## Esempio: scrittura _bollettino_ sulla __qualità dell'aria__, con _ChatGPT_
 
-<span class="hint">(un argomento complesso qualsiasi, scelgo un mio interesse di ricerca ho un metro di giudizio)</span>
+> Vogliamo scrivere un breve __bollettino__ sulla qualità dell'aria in Emilia-Romagna, a partire da _dati grezzi_ disponibili in rete
 
-<br>
+- Per una data specifica, es. `05-10-2025`
+    + cf. https://apps.arpae.it/qualita-aria/bollettino-qa/20251005
 
-> IA __Neuro-Simbolica__: la combinazione di metodi _simbolici_ ["IA classica", NdA] con metodi basati su _reti neurali_ artificiali.
-
-(cf. [Neuro-symbolic artificial intelligence](https://ip.ios.semcs.net/articles/ai-communications/aic210084))
-
-> Una __revisione sistematica della letteratura__ (_SLR_) è un metodo accademico indipendente che mira a identificare e valutare tutta la _letteratura_ rilevante su un _argomento_ al fine di trarre conclusioni sulla questione in esame.
-> [...]
-> Viene seguito un _approccio metodologico formale_ per ridurre le distorsioni causate da una selezione eccessivamente restrittiva della letteratura disponibile e per aumentare l'_affidabilità_ della letteratura selezionata.
-
-(cf. <https://www.tu.berlin/en/wm/bibliothek/research-teaching/systematic-literature-reviews/description-of-the-systematic-literature-review-method>)
+- Valutare i dati grezzi prima della generazione per capire cosa aspettarsi
+    + le celle {{% color "orange" %}}arancioni{{% /color %}} rappresentano valori da attenzionare
 
 ---
 
@@ -745,84 +627,52 @@ Possiamo considerare FM come __esperti__ su tematiche che:
 
 <!-- (link alla [conversazione completa](https://chatgpt.com/share/e/679b94b4-93e4-8004-9fae-457ba9f4bf07)) -->
 
-{{< image src="./rewriting/bad/nesy-slr-1.png" width="100%" max-h="70vh" >}}
-
----
-
 {{% multicol %}}
 {{% col %}}
-{{< image src="./rewriting/bad/nesy-slr-2.png" width="100%" max-h="70vh" >}}
+{{< image src="./rewriting/bad/air-quality-bullettin-1.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-1. Frase generica, incontestabile, corretta
-2. {{% color "green" %}}Obiettivo dell'articolo{{% /color %}}
-3. {{% color "gold" %}}Obiettivo generico, sempre buono per rassegna{{% /color %}}
-4. {{% color "red" %}}Contributo specifico: suggerisce struttura articolo{{% /color %}}
-5. {{% color "gold" %}}Contributo generico{{% /color %}}
-6. {{% color "red" %}}Contributo specifico{{% /color %}}
-7. Frase di chiusura generica
+- Notare l'__URL__ nel _prompt_
+    + ci aspettiamo che ChatGPT vi acceda prima di rispondere
+    + {{% color "red" %}}approccio sconsigliato!{{% /color %}}
+        * (non è detto che lo faccia)
+- La risposta è una _mera interpretazione_ dei dati
 
 {{% fragment %}}
-> Uso sostanziale di GenIA
+> Stiamo lasciando _margine_ a ChatGPT di _scegliere_ la __"linea editoriale"__
 {{% /fragment %}}
 {{% /col %}}
 {{% /multicol %}}
 
 ---
 
-## È possibile richiedere modifiche
+## Approccio 2 ({{% color "orange" %}}problematico{{% /color %}}): Con traccia + URL
 
 {{% multicol %}}
 {{% col %}}
-{{< image src="./rewriting/bad/nesy-slr-3.png" width="100%" max-h="70vh" >}}
+{{< image src="./rewriting/bad/air-quality-bullettin-3.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-{{< image src="./rewriting/bad/nesy-slr-4.png" width="100%" max-h="70vh" >}}
-{{% /col %}}
-{{% /multicol %}}
-
-{{% /section %}}
-
----
-
-{{% section %}}
-
-## Approccio 2 (_Consigliato_): Con traccia
-
-<!-- (link alla [conversazione completa](https://chatgpt.com/share/e/679b94c5-17d0-8004-9b4a-6687418f3569)) -->
-
-{{% multicol %}}
-{{% col %}}
-{{< image src="./rewriting/nesy-slr-1.png" width="100%" max-h="70vh" >}}
-{{% /col %}}
-{{% col %}}
-### La traccia
-
-1. {{% color "green" %}}Frase d'aggancio{{% /color %}}
-2. {{% color "lime" %}}Obiettivo dell'articolo{{% /color %}}
-3. {{% color "green" %}}Descrizione della metodologia{{% /color %}}
-4. {{% color "lime" %}}Dichiarazione contributi{{% /color %}}
-5. {{% color "green" %}}Indicazione dell'audicence inteso{{% /color %}}
+- __Fornire esplicitamente la scaletta__ di cose da dire
+- Notare l'__URL__ nel _prompt_
+    + ci aspettiamo che ChatGPT vi acceda prima di rispondere
+    + {{% color "red" %}}approccio sconsigliato!{{% /color %}}
+        * (non è detto che lo faccia)
 {{% /col %}}
 {{% /multicol %}}
 
 ---
 
+## Approccio 3 (_consigliato_): Con traccia + allegato
+
 {{% multicol %}}
 {{% col %}}
-{{< image src="./rewriting/nesy-slr-2.png" width="100%" max-h="70vh" >}}
+{{< image src="./rewriting/air-quality-bullettin-1.png" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col %}}
-### Analisi del risultato
-
-1. {{% color "green" %}}Frase d'aggancio{{% /color %}}
-2. {{% color "gold" %}}Libera interpretazione di GenIA{{% /color %}}
-2. {{% color "lime" %}}Obiettivo dell'articolo{{% /color %}}
-3. {{% color "green" %}}Descrizione della metodologia{{% /color %}}
-4. {{% color "lime" %}}Dichiarazione contributi{{% /color %}}
-5. {{% color "green" %}}Indicazione dell'audicence inteso{{% /color %}}
-
-> Uso _non_ sostanziale di GenIA
+- __Fornire esplicitamente la scaletta__ di cose da dire
+- __Allegare__ i dati grezzi
+    + e.g. previa _esportazione_ su file testuale
 {{% /col %}}
 {{% /multicol %}}
 
