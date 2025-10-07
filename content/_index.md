@@ -850,6 +850,19 @@ Si veda file [P000_ORD24.pdf](https://www.istruzione.it/esame_di_stato/202324/It
 > - Al crescere della dimensione del documento, aumenta la probabilità di __allucinazioni__, distorsioni, __lacune__
 {{% /fragment %}}
 
+---
+
+## Spiegazione __RAG__ (Retrieval-Augmented Generation)
+
+![RAG pipeline overview](./rag.png)
+
+- Quando si carica un _allegato_ testuale in un'interfaccia conversazionale:
+    1. LLM-provider crea un __vector DB__ al volo, contentete _frammenti_ (chunck) dell'allegato...
+    2. ... _indicizzandoli_ semanticamente
+- Per rispondere alle domande dell'utente, si estraggono i _$K$ frammenti_ più __semanticamente "vicini"__ al prompt 
+- Al crescere della dimensione del documento:
+    * aumentano i _frammenti_ indicizzati
+    * diminuisce la probabilità che i _$K$ frammenti_ estratti contengano _tutte_ le informazioni rilevanti
 
 {{% /section %}}
 
@@ -859,7 +872,7 @@ Si veda file [P000_ORD24.pdf](https://www.istruzione.it/esame_di_stato/202324/It
 
 ## Esempio: __sintesi__ di documento (_Policy di Ateno su GenAI_)
 
-Si veda file [Policy-Generative-AI.pdf](www.unibo.it/it/allegati/policy-per-un-uso-etico-e-responsabile-dell2019intelligenza-artificiale-generativa-nelle-attivita-di-didattica-e-ricerca/@@download/file/Policy-Generative-AI.pdf)
+Si veda file [Policy-Generative-AI.pdf](https://www.unibo.it/it/allegati/policy-per-un-uso-etico-e-responsabile-dell2019intelligenza-artificiale-generativa-nelle-attivita-di-didattica-e-ricerca/@@download/file/Policy-Generative-AI.pdf)
 
 {{< image src="./reading/synthesis/policy-1.png" width="100%" max-h="65vh" >}}
 
@@ -890,7 +903,7 @@ Si veda file [Policy-Generative-AI.pdf](www.unibo.it/it/allegati/policy-per-un-u
 
 {{% fragment %}}
 > - Evitare di basarsi __esclusivamente__ sulla sintesi di GenAI per _interpretare_ un testo
-> - Utile __fare domande__ _specifiche_ o _maliziose_ sul documento per catturare ulteriori _dettagli_
+> - Utile __fare domande__ _specifiche_ o _scettiche_ sul documento per catturare ulteriori _dettagli_
 {{% /fragment %}}
 
 {{% /section %}}
@@ -901,50 +914,32 @@ Si veda file [Policy-Generative-AI.pdf](www.unibo.it/it/allegati/policy-per-un-u
 
 ## Esempio: __confronto__ di documenti _diversi_
 
-Confrontiamo due __articoli scientifici__ (su _tema simile_):
+Confrontiamo due __articoli giornalistici__ (su _tema simile_):
 
 {{% multicol %}}
 {{% col class="col-6" %}}
-<https://arxiv.org/abs/2404.04108>
-<embed src="./2404.04108v2.pdf" width="100%" height="700px" />
+[Sole 24h](https://archive.ph/yuhjy)
+
+{{< image src="https://d7mfx4ay7w8kcl.archive.ph/yuhjy/014fe046d2eb4a217e6620fc8a0127bbbfd172cd/scr.png" link="https://archive.ph/yuhjy" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% col class="col-6" %}}
-<https://aclanthology.org/2023.findings-acl.309/>
-<embed src="./2023.findings-acl.309.pdf" width="100%" height="700px" />
+[il Post](https://archive.ph/kCKDi)
+
+{{< image src="https://d00i9h4ii67fac.archive.ph/kCKDi/193eac526761c7d2629511a05743573577517f14/scr.png" link="https://archive.ph/kCKDi" width="100%" max-h="70vh" >}}
 {{% /col %}}
 {{% /multicol %}}
 
 ---
 
-## Esempio: __confronto__ di documenti _diversi_
-
-### Idea di fondo (da <https://arxiv.org/abs/2404.04108>)
-
-<br>
-
-![](./reading/comparison/llm4kg.svg)
-
----
-
-## Esempio: __confronto__ di documenti _diversi_
-
-### Idea di fondo (da <https://aclanthology.org/2023.findings-acl.309/>)
-
-<br>
-
-![](./reading/comparison/bertnet.png)
-
----
-
-{{< image src="./reading/comparison/llm4kg-vs-harvest-1.png" width="100%" max-h="70vh" >}}
-
----
-
-{{< image src="./reading/comparison/llm4kg-vs-harvest-2.png" width="100%" max-h="70vh" >}}
-
----
-
-{{< image src="./reading/comparison/llm4kg-vs-harvest-3.png" width="100%" max-h="70vh" >}}
+{{% multicol %}}
+{{% col class="col-6" %}}
+{{< image src="./reading/comparison/comparison.png" width="100%" max-h="70vh" >}}
+{{% /col %}}
+{{% col class="col-6" %}}
+- Importante _allegare_ i __documenti__ da confrontare
+- In assenza di specifiche, GenAI può __inventare__ _aspetti di confronto_
+{{% /col %}}
+{{% /multicol %}}
 
 {{% /section %}}
 
