@@ -969,6 +969,24 @@
 <li>Al crescere della dimensione del documento, aumenta la probabilità di <strong>allucinazioni</strong>, distorsioni, <strong>lacune</strong></li>
 </ul></blockquote>
 </span>
+</section><section>
+<h2 id="spiegazione-rag-retrieval-augmented-generation">Spiegazione <strong>RAG</strong> (Retrieval-Augmented Generation)</h2>
+<p><img src="./rag.png" alt="RAG pipeline overview"></p>
+<ul>
+<li>Quando si carica un <em>allegato</em> testuale in un’interfaccia conversazionale:
+<ol>
+<li>LLM-provider crea un <strong>vector DB</strong> al volo, contentete <em>frammenti</em> (chunck) dell’allegato…</li>
+<li>… <em>indicizzandoli</em> semanticamente</li>
+</ol>
+</li>
+<li>Per rispondere alle domande dell’utente, si estraggono i <em>$K$ frammenti</em> più <strong>semanticamente “vicini”</strong> al prompt</li>
+<li>Al crescere della dimensione del documento:
+<ul>
+<li>aumentano i <em>frammenti</em> indicizzati</li>
+<li>diminuisce la probabilità che i <em>$K$ frammenti</em> estratti contengano <em>tutte</em> le informazioni rilevanti</li>
+</ul>
+</li>
+</ul>
 
 </section>
 </section><section>
@@ -976,7 +994,7 @@
 
 <section data-shortcode-section="">
 <h2 id="esempio-sintesi-di-documento-policy-di-ateno-su-genai">Esempio: <strong>sintesi</strong> di documento (<em>Policy di Ateno su GenAI</em>)</h2>
-<p>Si veda file <a href="www.unibo.it/it/allegati/policy-per-un-uso-etico-e-responsabile-dell2019intelligenza-artificiale-generativa-nelle-attivita-di-didattica-e-ricerca/@@download/file/Policy-Generative-AI.pdf">Policy-Generative-AI.pdf</a></p>
+<p>Si veda file <a href="https://www.unibo.it/it/allegati/policy-per-un-uso-etico-e-responsabile-dell2019intelligenza-artificiale-generativa-nelle-attivita-di-didattica-e-ricerca/@@download/file/Policy-Generative-AI.pdf">Policy-Generative-AI.pdf</a></p>
 <img src="./reading/synthesis/policy-1.png" alt="" style="width: 100%; max-width: 95vw; max-height: 65vh; object-fit: contain; ">
 </section><section>
 <img src="./reading/synthesis/policy-2.png" alt="" style="width: 100%; max-width: 95vw; max-height: 70vh; object-fit: contain; ">
@@ -1003,7 +1021,7 @@
   <blockquote>
 <ul>
 <li>Evitare di basarsi <strong>esclusivamente</strong> sulla sintesi di GenAI per <em>interpretare</em> un testo</li>
-<li>Utile <strong>fare domande</strong> <em>specifiche</em> o <em>maliziose</em> sul documento per catturare ulteriori <em>dettagli</em></li>
+<li>Utile <strong>fare domande</strong> <em>specifiche</em> o <em>scettiche</em> sul documento per catturare ulteriori <em>dettagli</em></li>
 </ul></blockquote>
 </span>
 
@@ -1013,32 +1031,31 @@
 
 <section data-shortcode-section="">
 <h2 id="esempio-confronto-di-documenti-diversi">Esempio: <strong>confronto</strong> di documenti <em>diversi</em></h2>
-<p>Confrontiamo due <strong>articoli scientifici</strong> (su <em>tema simile</em>):</p>
+<p>Confrontiamo due <strong>articoli giornalistici</strong> (su <em>tema simile</em>):</p>
 <div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col col-6" style="text-align: center;"><p><a href="https://arxiv.org/abs/2404.04108">https://arxiv.org/abs/2404.04108</a>
-<embed src="./2404.04108v2.pdf" width="100%" height="700px"></p>
+    <div class="row "><div class="col col-6" style="text-align: center;"><p><a href="https://archive.ph/yuhjy">Sole 24h</a></p>
+<a href="https://archive.ph/yuhjy">
+<img src="https://d7mfx4ay7w8kcl.archive.ph/yuhjy/014fe046d2eb4a217e6620fc8a0127bbbfd172cd/scr.png" alt="" style="width: 100%; max-width: 95vw; max-height: 70vh; object-fit: contain; ">
+</a>
 </div>
-<div class="col col-6" style="text-align: center;"><p><a href="https://aclanthology.org/2023.findings-acl.309/">https://aclanthology.org/2023.findings-acl.309/</a>
-<embed src="./2023.findings-acl.309.pdf" width="100%" height="700px"></p>
+<div class="col col-6" style="text-align: center;"><p><a href="https://archive.ph/kCKDi">il Post</a></p>
+<a href="https://archive.ph/kCKDi">
+<img src="https://d00i9h4ii67fac.archive.ph/kCKDi/193eac526761c7d2629511a05743573577517f14/scr.png" alt="" style="width: 100%; max-width: 95vw; max-height: 70vh; object-fit: contain; ">
+</a>
 </div>
 </div>
 </div>
 </section><section>
-<h2 id="esempio-confronto-di-documenti-diversi-1">Esempio: <strong>confronto</strong> di documenti <em>diversi</em></h2>
-<h3 id="idea-di-fondo-da-">Idea di fondo (da <a href="https://arxiv.org/abs/2404.04108">https://arxiv.org/abs/2404.04108</a>)</h3>
-<br>
-<p><img src="./reading/comparison/llm4kg.svg" alt=""></p>
-</section><section>
-<h2 id="esempio-confronto-di-documenti-diversi-2">Esempio: <strong>confronto</strong> di documenti <em>diversi</em></h2>
-<h3 id="idea-di-fondo-da--1">Idea di fondo (da <a href="https://aclanthology.org/2023.findings-acl.309/">https://aclanthology.org/2023.findings-acl.309/</a>)</h3>
-<br>
-<p><img src="./reading/comparison/bertnet.png" alt=""></p>
-</section><section>
-<img src="./reading/comparison/llm4kg-vs-harvest-1.png" alt="" style="width: 100%; max-width: 95vw; max-height: 70vh; object-fit: contain; ">
-</section><section>
-<img src="./reading/comparison/llm4kg-vs-harvest-2.png" alt="" style="width: 100%; max-width: 95vw; max-height: 70vh; object-fit: contain; ">
-</section><section>
-<img src="./reading/comparison/llm4kg-vs-harvest-3.png" alt="" style="width: 100%; max-width: 95vw; max-height: 70vh; object-fit: contain; ">
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col col-6" style="text-align: center;"><img src="./reading/comparison/comparison.png" alt="" style="width: 100%; max-width: 95vw; max-height: 70vh; object-fit: contain; ">
+</div>
+<div class="col col-6" style="text-align: center;"><ul>
+<li>Importante <em>allegare</em> i <strong>documenti</strong> da confrontare</li>
+<li>In assenza di specifiche, GenAI può <strong>inventare</strong> <em>aspetti di confronto</em></li>
+</ul>
+</div>
+</div>
+</div>
 
 </section>
 </section><section>
