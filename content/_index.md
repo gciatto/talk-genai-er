@@ -1106,7 +1106,6 @@ Dicembre 2024:
 {{% /col %}}
 {{% /multicol %}}
 
-
 ---
 
 {{< slide id="data-processing" >}}
@@ -1510,6 +1509,54 @@ Il risultato
 > Non è così facile __controllare__ con _precisione_ la generazione di immagini
 
 {{% /section %}}
+
+---
+
+{{< slide id="advanced" >}}
+
+# Utilizzi avantazi di GenAI
+
+---
+
+## Progetti (pt. 1)
+
+> __Idea__: _gruppi_ di chat correlate, con _istruzioni_ e _allegati_ in comune
+
+Utili se bisogna _riutilizzare_ le stesse istruzioni/allegati in _molteplici conversazioni_
+
+{{% fragment %}}
+### Esempi / pattern di utilizzo
+
++ Processo di __selezione di personale__
+    1. le _istruzioni_ forniscono i _criteri_ di selezione / esclusione
+    2. _allegati comuni_ possono contenere descrizione del _profilo desiderato_
+    3. in ogni conversazione si allega solo il _CV_ del candidato `i-esimo` e si chiede di _analizzarlo_ (rispetto ai criteri, per il profilo)
+        + previa anonimizzazione
+
++ Processo di __scrittua di un progetto__ (per bando competitivo)
+    1. _allegati comuni_ possono contenere _il bando_, il _facsimile di proposta_, esempi di progetti precedentemente finanziati, etc.
+    2. le _istruzioni_ forniscono indicazioni su _cosa_ scrivere e _come_
+    3. in ogni _conversazione_ si allegano fonti, e ci si fa aiutare a riempire una diversa sezione del facsimile
+    4. ogni _bozza_ si allega ad una _nuova conversazione_ per fini di _revisione_
+{{% /fragment %}}
+
+---
+
+## Progetti (pt. 2)
+
+![](./chatgpt-advanced/chatgpt-projects-1.png)
+
+---
+
+## Progetti (pt. 3)
+
+![](./chatgpt-advanced/chatgpt-projects-2.png)
+
+---
+
+## Progetti (pt. 4)
+
+![](./chatgpt-advanced/chatgpt-projects-3.png)
 
 ---
 
