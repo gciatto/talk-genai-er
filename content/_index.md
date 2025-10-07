@@ -1082,8 +1082,30 @@ Dicembre 2024:
 {{% fragment %}}
 > Meglio _limitarsi_ ad __ispezionare__ il documento con GenAI e _farsi un'idea_ prima di esprimere un __giudizio__
 {{% /fragment %}}
-
 {{% /section %}}
+
+---
+
+## Personalizzazione di ChatGPT
+
+{{% multicol %}}
+{{% col %}}
+{{< image src="./chatgpt-settings/customize.png" width="100%" max-h="70vh" >}}
+{{% /col %}}
+{{% col %}}
+- E' possibile __personalizzare__ il _modo_ in cui GenAI _riponde_
+- O specificandolo di volta in volta, o una volta per tutte
+- Fornire __istruzioni precise__, in merito a:
+    1. quanto essere _conciso_
+    2. quanto essere _accondiscendente_
+    3. se essere _mellifluo_ o meno
+    4. che _forma_ dare in genere al testo
+        * (wall-of-text, elenchi puntati, etc.)
+    5. _tono_ della risposta (sarcastico, schietto, etc.)
+    6. come gestire l'_assenza di informazioni_
+{{% /col %}}
+{{% /multicol %}}
+
 
 ---
 
