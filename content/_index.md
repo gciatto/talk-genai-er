@@ -859,7 +859,7 @@ Si veda file [P000_ORD24.pdf](https://www.istruzione.it/esame_di_stato/202324/It
 - Quando si carica un _allegato_ testuale in un'interfaccia conversazionale:
     1. LLM-provider crea un __vector DB__ al volo, contentete _frammenti_ (chunck) dell'allegato...
     2. ... _indicizzandoli_ semanticamente
-- Per rispondere alle domande dell'utente, si estraggono i _$K$ frammenti_ più __semanticamente "vicini"__ al prompt 
+- Per rispondere alle domande dell'utente, si estraggono i _$K$ frammenti_ più __semanticamente "vicini"__ al prompt
 - Al crescere della dimensione del documento:
     * aumentano i _frammenti_ indicizzati
     * diminuisce la probabilità che i _$K$ frammenti_ estratti contengano _tutte_ le informazioni rilevanti
@@ -1024,21 +1024,39 @@ Dicembre 2024:
 
 {{% section %}}
 
-## Esempio: supporto alla _revisione paritaria_ di un documento ({{% color "red" %}}sconsigliabile!{{% /color %}})
+## Esempio: supporto alla _revisione_ di un documento (pt. 1)
 
-{{< image src="./reading/review/review-1.png" width="100%" max-h="70vh" >}}
+1. Livello __linguistico__ / formale (_ortografia_, grammatica, punteggiatura, concordanze)
+
+2. Livello __strutturale__ (_coerenza_ logica tra sezioni, paragrafi e frasi)
+    - organizzazione complessiva (ordine delle idee, presenza di _ridondanze_ o _salti logici_)
+    - _allineamento_ del contenuto con lo scopo dichiarato nel documento
+
+3. Livello __semantico__ / contenutistico
+    - chiarezza concettuale: identificare _ambiguità_, _impliciti_, o concetti poco fondati
+    - rilevamento di potenziali _contraddizioni_ o _incoerenze_ interne
+    - identificazione di __premesse non esplicitate__ o _argomenti circolari_
+
+4. Livello __argomentativo__ / retorico
+    - _solidità logica_ delle argomentazioni
+    - _bilanciamento_ tra asserzioni e prove o riferimenti
+    - analisi di _bias retorici_, appelli emotivi o _fallacie logiche_
+    - __efficacia comunicativa rispetto al pubblico target__
 
 ---
 
-{{< image src="./reading/review/review-2.png" width="100%" max-h="70vh" >}}
+## Esempio: supporto alla _revisione_ di un documento (pt. 2)
 
----
+> Vogliamo individuare _problemi_ nella __leggibilità__ di un [bando](https://sociale.regione.emilia-romagna.it/leggi-atti-bandi/bandi/2025/bando-regionale-per-il-sostegno-a-progetti-infanzia-adolescenza-2026) prima di pubblicarlo
 
-{{< image src="./reading/review/review-3.png" width="100%" max-h="70vh" >}}
-
----
-
-{{< image src="./reading/review/review-4.png" width="100%" max-h="70vh" >}}
+{{% multicol %}}
+{{% col %}}
+![](./reading/review/review-1.png)
+{{% /col %}}
+{{% col %}}
+![](./reading/review/review-2.png)
+{{% /col %}}
+{{% /multicol %}}
 
 ---
 
@@ -1051,7 +1069,8 @@ Dicembre 2024:
 - Upload del paper potrebbe comportare __violazione__ della __riservatezza__
     + ricordarsi _escludere_ il documento dai dati usabili per _futuri cicli di allenamento_
 
-- Si sta __delegando__ a GenAI un processo _critico_, che ha un impatto su _altre persone_ e sulla _comunità_
+- Evitare di __delegare giudizi__ in merito all'accettazione/rifiuto del documento, ma limitarsi a usare GenAI per fini analitici
+    + specie se l'accettazione/rifiuto ha un impatto su _altre persone_ e sulla _comunità_
     + la _responsabilità_ rimane sul revisore umano
 
 - ChatGPT tende ad essere __accondiscendente__ e _positivo_, riportando punti di forza / limitazioni riportati nel documento stesso
@@ -1061,9 +1080,7 @@ Dicembre 2024:
 - Si può richiedere una revisione __aggressiva__ o __critica__ ... spostando il bias verso la _negatività_
 
 {{% fragment %}}
-
 > Meglio _limitarsi_ ad __ispezionare__ il documento con GenAI e _farsi un'idea_ prima di esprimere un __giudizio__
-
 {{% /fragment %}}
 
 {{% /section %}}
