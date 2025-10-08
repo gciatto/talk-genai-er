@@ -41,7 +41,10 @@ outputs = ["Reveal"]
     3. [Esempio di GenAI come assistente di lettura](#reading)
     4. [Esempio di GenAI come assistente per l'elaborazione dei dati](#data-processing)
     5. [Esempio di GenAI come generatore di contenuti](#content-generation)
-4. [Dichiarare / citare l'impiego di GenAI](#citations)
+4. [Aspetti avanzati di GenAI](#advanced)
+    1. [Progetti](#projects)
+    2. [ChatBot personalizzati](#custom-chatbots)
+5. [Dichiarare / citare l'impiego di GenAI](#citations)
 
 {{% /section %}}
 
@@ -1518,6 +1521,10 @@ Il risultato
 
 ---
 
+{{< slide id="projects" >}}
+
+{{% section %}}
+
 ## Progetti (pt. 1)
 
 > __Idea__: _gruppi_ di chat correlate, con _istruzioni_ e _allegati_ in comune
@@ -1557,6 +1564,87 @@ Utili se bisogna _riutilizzare_ le stesse istruzioni/allegati in _molteplici con
 ## Progetti (pt. 4)
 
 ![](./chatgpt-advanced/chatgpt-projects-3.png)
+
+{{% /section %}}
+
+---
+
+{{< slide id="custom-chatbots" >}}
+
+{{% section %}}
+
+## ChatBot personalizzati
+
+> __Idea__: creare un __ChatBot__ con _conoscenza specifica_ su un dominio, o con _competenze_ / _obiettivi_ / _istruzioni_ personalizzate
+
+("ChatBot" $\approx$ "GPT" nella nomenclatura di OpenAI)
+
+* _Due interfacce_: lato __utente__ (conversazionale) e lato __amministratore__ (istruzioni + allegati)
+    + OpenAI permette solo ad utenti _paganti_ di creare ChatBot personalizzati
+
+* Possibilità (lato amministratore) di programmare __azioni__ che il ChatBot potrà eseguire nell'interazione con gli utenti
+    + azione $\approx$ chiamata ad __API Web__ esterne
+
+{{% fragment %}}
+### Esempi / pattern di utilizzo
+1. ChatBot per rispondere a __FAQ__ in un ambito specifico
+    + e.g. front desk di un corso (forma esame, orari, contenuti, etc.)
+    + e.g. help-desk per un prodotto, servizio, ufficio, etc.
+2. ChatBot per automatizzare __operazioni ripetitive__ (che implichino chiamate a servizi Web)
+    + e.g. prenotazione di un appuntamento su un portale Web
+    + e.g. inserimento di un evento in calendario
+    + e.g. ricerca di informazioni su un motore di ricerca
+    + e.g. lettura dell'ora corrente su un orologio online
+{{% /fragment %}}
+
+---
+
+## Esempio di ChatBot Personalizzato: __Case Popolari ER__ (pt. 1)
+
+![](./chatgpt-advanced/gpt-create-1.png)
+
+---
+
+## Esempio di ChatBot Personalizzato: __Case Popolari ER__ (pt. 2)
+
+![](./chatgpt-advanced/gpt-create-2.png)
+
+---
+
+## Esempio di ChatBot Personalizzato: __Case Popolari ER__ (pt. 3)
+
+![](./chatgpt-advanced/gpt-create-3.png)
+
+---
+
+## Esempio di ChatBot Personalizzato: __Case Popolari ER__ (pt. 4)
+
+{{% multicol %}}
+{{% col %}}
+![](./chatgpt-advanced/gpt-create-4.png)
+{{% /col %}}
+{{% col class="col-3"%}}
+- [Regole Emilia-Romagna](https://territorio.regione.emilia-romagna.it/politiche-abitative/erp/normativa/copy_of_index.html)
+- [Regole Bologna](https://www.comune.bologna.it/servizi/casa/affittare-casa-popolare)
+- [Regole Cesena](https://www.unionevallesavio.it/richiesta-case-popolari-cesena)
+{{% /col %}}
+{{% /multicol %}}
+
+---
+
+## Esempio di ChatBot Personalizzato: __Case Popolari ER__ (pt. 5)
+
+![](./chatgpt-advanced/gpt-create-5.png)
+
+Link: <https://chatgpt.com/g/g-68e51cbcbcc881919d68a70d8853535a-fake-case-popolari-er>
+
+---
+
+## Esempio di ChatBot Personalizzato: __Case Popolari ER__ (pt. 6)
+
+![](./chatgpt-advanced/gpt-usage.png)
+
+{{% /section %}}
 
 ---
 
