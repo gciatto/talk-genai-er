@@ -114,6 +114,24 @@ Algoritmi di _IA_ in grado di __generare automaticamente__ _contenuti_, e.g.:
 >    + caso
 {{% /fragment %}}
 
+--- 
+
+## Servizio $\rightarrow$ __Reattività__
+
+- FM sono, per loro natura, _reattivi_ $\implies$ GenAI _risponde_ a prompt/richieste dell'utente
+    + non sono in grado di __iniziare__ una conversazione
+    + non sono in grado di __ricordare__ conversazioni passate 
+        * (a meno che non siano state salvate e riutilizzate come _contesto_ per la conversazione attuale)
+
+- Quando non-interrogati, FM sono __inerti__ (non "pensano", non "sognano", etc.)
+
+- Eventuali comportamenti _"proattivi"_ sono __simulati__ tramite prompting opportuno
+    + avviato da _procedura automatica_ (che a sua volta reagisce allo scorrere del _tempo_ o altri _eventi_)
+
+{{% fragment %}}
+> La maggior parte degli utilizzi _sensati_ di GenAI assumono una qualche _iniziativa_ dell'utente
+{{% /fragment %}}
+
 {{% /section %}}
 
 ---
