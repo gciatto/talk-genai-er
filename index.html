@@ -73,6 +73,12 @@
 <li><a href="#content-generation">Esempio di GenAI come generatore di contenuti</a></li>
 </ol>
 </li>
+<li><a href="#advanced">Aspetti avanzati di GenAI</a>
+<ol>
+<li><a href="#projects">Progetti</a></li>
+<li><a href="#custom-chatbots">ChatBot personalizzati</a></li>
+</ol>
+</li>
 <li><a href="#citations">Dichiarare / citare l’impiego di GenAI</a></li>
 </ol>
 
@@ -1657,13 +1663,17 @@ possiamo velocemente <em>analizzare</em> l’<strong>attrattività dei corsi</st
 <section data-noprocess="" data-shortcode-slide="" id="advanced">
   
 <h1 id="utilizzi-avantazi-di-genai">Utilizzi avantazi di GenAI</h1>
-</section><section>
+</section>
+
+<section data-noprocess="" data-shortcode-slide="" id="projects">
+  
+
+
+<section data-shortcode-section="">
 <h2 id="progetti-pt-1">Progetti (pt. 1)</h2>
 <blockquote>
 <p><strong>Idea</strong>: <em>gruppi</em> di chat correlate, con <em>istruzioni</em> e <em>allegati</em> in comune</p></blockquote>
 <p>Utili se bisogna <em>riutilizzare</em> le stesse istruzioni/allegati in <em>molteplici conversazioni</em></p>
-
-
 <span class="fragment ">
   <h3 id="esempi--pattern-di-utilizzo">Esempi / pattern di utilizzo</h3>
 <ul>
@@ -1689,9 +1699,7 @@ possiamo velocemente <em>analizzare</em> l’<strong>attrattività dei corsi</st
 </ol>
 </li>
 </ul>
-
 </span>
-
 </section><section>
 <h2 id="progetti-pt-2">Progetti (pt. 2)</h2>
 <p><img src="./chatgpt-advanced/chatgpt-projects-1.png" alt=""></p>
@@ -1701,6 +1709,83 @@ possiamo velocemente <em>analizzare</em> l’<strong>attrattività dei corsi</st
 </section><section>
 <h2 id="progetti-pt-4">Progetti (pt. 4)</h2>
 <p><img src="./chatgpt-advanced/chatgpt-projects-3.png" alt=""></p>
+
+</section>
+</section>
+
+<section data-noprocess="" data-shortcode-slide="" id="custom-chatbots">
+  
+
+
+<section data-shortcode-section="">
+<h2 id="chatbot-personalizzati">ChatBot personalizzati</h2>
+<blockquote>
+<p><strong>Idea</strong>: creare un <strong>ChatBot</strong> con <em>conoscenza specifica</em> su un dominio, o con <em>competenze</em> / <em>obiettivi</em> / <em>istruzioni</em> personalizzate</p></blockquote>
+<p>(“ChatBot” $\approx$ “GPT” nella nomenclatura di OpenAI)</p>
+<ul>
+<li>
+<p><em>Due interfacce</em>: lato <strong>utente</strong> (conversazionale) e lato <strong>amministratore</strong> (istruzioni + allegati)</p>
+<ul>
+<li>OpenAI permette solo ad utenti <em>paganti</em> di creare ChatBot personalizzati</li>
+</ul>
+</li>
+<li>
+<p>Possibilità (lato amministratore) di programmare <strong>azioni</strong> che il ChatBot potrà eseguire nell’interazione con gli utenti</p>
+<ul>
+<li>azione $\approx$ chiamata ad <strong>API Web</strong> esterne</li>
+</ul>
+</li>
+</ul>
+<span class="fragment ">
+  <h3 id="esempi--pattern-di-utilizzo">Esempi / pattern di utilizzo</h3>
+<ol>
+<li>ChatBot per rispondere a <strong>FAQ</strong> in un ambito specifico
+<ul>
+<li>e.g. front desk di un corso (forma esame, orari, contenuti, etc.)</li>
+<li>e.g. help-desk per un prodotto, servizio, ufficio, etc.</li>
+</ul>
+</li>
+<li>ChatBot per automatizzare <strong>operazioni ripetitive</strong> (che implichino chiamate a servizi Web)
+<ul>
+<li>e.g. prenotazione di un appuntamento su un portale Web</li>
+<li>e.g. inserimento di un evento in calendario</li>
+<li>e.g. ricerca di informazioni su un motore di ricerca</li>
+<li>e.g. lettura dell’ora corrente su un orologio online</li>
+</ul>
+</li>
+</ol>
+</span>
+</section><section>
+<h2 id="esempio-di-chatbot-personalizzato-case-popolari-er-pt-1">Esempio di ChatBot Personalizzato: <strong>Case Popolari ER</strong> (pt. 1)</h2>
+<p><img src="./chatgpt-advanced/gpt-create-1.png" alt=""></p>
+</section><section>
+<h2 id="esempio-di-chatbot-personalizzato-case-popolari-er-pt-2">Esempio di ChatBot Personalizzato: <strong>Case Popolari ER</strong> (pt. 2)</h2>
+<p><img src="./chatgpt-advanced/gpt-create-2.png" alt=""></p>
+</section><section>
+<h2 id="esempio-di-chatbot-personalizzato-case-popolari-er-pt-3">Esempio di ChatBot Personalizzato: <strong>Case Popolari ER</strong> (pt. 3)</h2>
+<p><img src="./chatgpt-advanced/gpt-create-3.png" alt=""></p>
+</section><section>
+<h2 id="esempio-di-chatbot-personalizzato-case-popolari-er-pt-4">Esempio di ChatBot Personalizzato: <strong>Case Popolari ER</strong> (pt. 4)</h2>
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col " style="text-align: center;"><p><img src="./chatgpt-advanced/gpt-create-4.png" alt=""></p>
+</div>
+<div class="col col-3" style="text-align: center;"><ul>
+<li><a href="https://territorio.regione.emilia-romagna.it/politiche-abitative/erp/normativa/copy_of_index.html">Regole Emilia-Romagna</a></li>
+<li><a href="https://www.comune.bologna.it/servizi/casa/affittare-casa-popolare">Regole Bologna</a></li>
+<li><a href="https://www.unionevallesavio.it/richiesta-case-popolari-cesena">Regole Cesena</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section><section>
+<h2 id="esempio-di-chatbot-personalizzato-case-popolari-er-pt-5">Esempio di ChatBot Personalizzato: <strong>Case Popolari ER</strong> (pt. 5)</h2>
+<p><img src="./chatgpt-advanced/gpt-create-5.png" alt=""></p>
+<p>Link: <a href="https://chatgpt.com/g/g-68e51cbcbcc881919d68a70d8853535a-fake-case-popolari-er">https://chatgpt.com/g/g-68e51cbcbcc881919d68a70d8853535a-fake-case-popolari-er</a></p>
+</section><section>
+<h2 id="esempio-di-chatbot-personalizzato-case-popolari-er-pt-6">Esempio di ChatBot Personalizzato: <strong>Case Popolari ER</strong> (pt. 6)</h2>
+<p><img src="./chatgpt-advanced/gpt-usage.png" alt=""></p>
+
+</section>
 </section>
 
 <section data-noprocess="" data-shortcode-slide="" id="citations">
